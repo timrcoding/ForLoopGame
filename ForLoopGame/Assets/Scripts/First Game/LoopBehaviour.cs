@@ -6,7 +6,7 @@ using TMPro;
 public class LoopBehaviour : MonoBehaviour
 {
     public static LoopBehaviour instance;
-    //ALL VALUES ARE PUBLIC AS ACCESSED BY OTHER SCRIPTS
+    //ALL VALUES ARE PUBLIC AS SET BY OTHER SCRIPTS
     public int initialiserValue;
     public int limitValue;
     public int incrementerValue;
