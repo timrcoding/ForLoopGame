@@ -8,11 +8,11 @@ public class LineBehaviour : MonoBehaviour
 {
     public int uniqueRef;
     public GameObject vehicle;
-    public GameObject target;
-    public TextMeshProUGUI indexText;
-
-    
-    public bool isTarget;
+    [SerializeField]
+    private GameObject target;
+    [SerializeField]
+    private TextMeshProUGUI indexText;
+    private bool isTarget;
     void Start()
     {
         
@@ -27,12 +27,18 @@ public class LineBehaviour : MonoBehaviour
         }
         else
         {
-                target.GetComponent<Image>().color = Color.black;
+            target.GetComponent<Image>().color = Color.black;
         }
     }
 
     public void setIndex()
     {
         indexText.text = uniqueRef.ToString();
+    }
+
+    public void moveVehicle()
+    {
+        vehicle.GetComponent<VehicleBehaviour>().resetPosition();
+        vehicle.GetComponent<VehicleBehaviour>().moveObject = true;
     }
 }

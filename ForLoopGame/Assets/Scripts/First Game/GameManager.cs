@@ -7,6 +7,7 @@ using System.Linq;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    [SerializeField]
     public List<GameObject> lines;
     public bool[] correctAnswers;
     public bool[] activated;
@@ -64,14 +65,14 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(3);
         transitionButton.SetActive(true);
         transition.GetComponent<Animator>().SetTrigger("Slide");
-        AudioManager.instance.AudioS.PlayOneShot(AudioManager.instance.cheer);
-        LevelCounter.instance.count++;
+        AudioManager.instance.playClip("cheer");
+
     }
 
     public IEnumerator wrongAnswer()
     {
         yield return new WaitForSeconds(3);
-        AudioManager.instance.AudioS.PlayOneShot(AudioManager.instance.wrongAnswer);
+        AudioManager.instance.playClip("wronganswer");
         GameObject[] vehicles = GameObject.FindGameObjectsWithTag("Vehicle");
         foreach(GameObject g in vehicles)
         {

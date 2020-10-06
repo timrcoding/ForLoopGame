@@ -7,10 +7,12 @@ using TMPro;
 public class ClickerManager : MonoBehaviour
 {
     public static ClickerManager instance;
-    public int score;
-    public TextMeshProUGUI scoreText;
-    public float colorCounter;
-    public Image background;
+    private int score;
+    [SerializeField]
+    private TextMeshProUGUI scoreText;
+    private float colorCounter;
+    [SerializeField]
+    private Image background;
     void Start()
     {
         instance = this;

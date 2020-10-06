@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class VehicleBehaviour : MonoBehaviour
 {
-    public Vector3 startPos;
-    public GameObject target;
+    private Vector3 startPos;
+    [SerializeField]
+    private GameObject target;
     public bool moveObject;
-    public float lerpSpeed;
+    [SerializeField]
+    private float lerpSpeed;
     void Start()
     {
         startPos = transform.position;

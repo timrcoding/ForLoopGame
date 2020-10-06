@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class HitBall : MonoBehaviour {
 
-    public float startClick;
-    public float maximumForce;
+    private float startClick;
+    private float maximumForce;
     
 
     private void Update() {
@@ -20,8 +20,8 @@ public class HitBall : MonoBehaviour {
             
             float lengthHeldDown = Time.time - startClick;
             Launch(forceOfLaunch(lengthHeldDown));
-            AudioManager.instance.AudioS.PlayOneShot(AudioManager.instance.weee);
-            AudioManager.instance.AudioS.PlayOneShot(AudioManager.instance.club);
+            AudioManager.instance.playClip("wee");
+            AudioManager.instance.playClip("Club");
         }
     }
 

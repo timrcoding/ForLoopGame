@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MenuButton : MonoBehaviour
 {
-    public bool menuOpen;
-    public GameObject menu;
+    private bool menuOpen;
+    [SerializeField]
+    private GameObject menu;
 
     private void Start()
     {
@@ -38,8 +39,8 @@ public class MenuButton : MonoBehaviour
         Destroy(single);
         GameObject getout = GameObject.FindGameObjectWithTag("GetOut");
         Destroy(getout);
-        AudioManager.instance.AudioS.PlayOneShot(AudioManager.instance.crash);
-        AudioManager.instance.AudioS.PlayOneShot(AudioManager.instance.yeah);
+        AudioManager.instance.playClip("Crash");
+        AudioManager.instance.playClip("Yeah");
         StartCoroutine(LevelLoader.instance.loadNextOnTimer(7));
     }
 }

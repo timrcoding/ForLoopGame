@@ -49,17 +49,16 @@ public class LoopBehaviour : MonoBehaviour
         else
         {
             warningText.text = "Warning! This will break or not run!";
-            AudioManager.instance.AudioS.PlayOneShot(AudioManager.instance.warning);
+            AudioManager.instance.playClip("Warning");
         }
         
     }
 
     public void moveObject(int i)
     {
-        GameManager.instance.lines[i].GetComponent<LineBehaviour>().vehicle.GetComponent<VehicleBehaviour>().resetPosition();
-        GameManager.instance.lines[i].GetComponent<LineBehaviour>().vehicle.GetComponent<VehicleBehaviour>().moveObject = true;
+        GameManager.instance.lines[i].GetComponent<LineBehaviour>().moveVehicle();
         GameManager.instance.activated[i] = true;
-        AudioManager.instance.AudioS.PlayOneShot(AudioManager.instance.whistle);
+        AudioManager.instance.playClip("SlideWhistle");
     }
 
     

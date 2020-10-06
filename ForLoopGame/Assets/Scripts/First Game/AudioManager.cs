@@ -6,21 +6,26 @@ using UnityEngine.SceneManagement;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager instance;
-    public AudioClip whistle;
-    public AudioClip cheer;
-    public AudioClip warning;
-    public AudioClip wrongAnswer;
-    public AudioClip crash;
-    public AudioClip yeah;
-    public AudioSource AudioS;
-    public AudioClip weee;
-    public AudioClip club;
-
-    public AudioClip[] robotVoice;
+    private AudioSource AudioS;
+    [SerializeField]
+    private AudioClip[] robotVoice;
+    [SerializeField]
+    private bool playRobot;
+    private int levelCount;
     void Start()
     {
+        AudioS = GetComponent<AudioSource>();
         instance = this;
-        AudioS.PlayOneShot(robotVoice[LevelCounter.instance.count]);
+        if (playRobot)
+        {
+            AudioS.PlayOneShot(robotVoice[levelCount]);
+        }
+    }
+
+    public void playClip(string clip)
+    {
+        AudioClip clipPlayed = Resources.Load("Sound/" + clip.ToString()) as AudioClip;
+        AudioS.PlayOneShot(clipPlayed);
     }
 
     

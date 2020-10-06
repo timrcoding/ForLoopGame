@@ -5,10 +5,13 @@ using TMPro;
 
 public class OperatorBehaviour : MonoBehaviour
 {
-    public bool limitOperator;
-    public bool incOperator;
+    [SerializeField]
+    private bool limitOperator;
+    [SerializeField]
+    private bool incOperator;
 
-    public TextMeshProUGUI text;
+    [SerializeField]
+    private TextMeshProUGUI text;
 
     public int value;
     void Start()

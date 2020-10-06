@@ -6,23 +6,13 @@ using UnityEngine.SceneManagement;
 public class AsyncLoad : MonoBehaviour
 {
     public static AsyncLoad instance;
-    public UnityEngine.AsyncOperation async;
-    public int level;
+    private UnityEngine.AsyncOperation async;
     void Start()
     {
         instance = this;
         StartCoroutine(loadAsyncNextLevel());
     }
 
-    IEnumerator loadAsyncScene()
-    {
-        yield return new WaitForSeconds(0.1f);
-        async = SceneManager.LoadSceneAsync(level);
-        async.allowSceneActivation = false;
-
-        yield return async;
-        
-    }
 
     IEnumerator loadAsyncNextLevel()
     {

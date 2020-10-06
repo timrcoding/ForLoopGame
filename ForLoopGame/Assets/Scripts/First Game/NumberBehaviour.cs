@@ -5,27 +5,24 @@ using TMPro;
 
 public class NumberBehaviour : MonoBehaviour
 {
-    public int value;
-    public TextMeshProUGUI text;
+    private int value;
+    [SerializeField]
+    private TextMeshProUGUI text;
     public Animator anim;
 
     //SETS PROPERTY OF VALUE
-    public bool initialiser;
-    public bool limit;
-    public bool incrementer;
+    [SerializeField]
+    private bool initialiser;
+    [SerializeField]
+    private bool limit;
+    [SerializeField]
+    private bool incrementer;
 
     void Start()
     {
-        setText();
-        //setToLoop();
-        
+        setText();      
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void setText()
     {
@@ -79,6 +76,6 @@ public class NumberBehaviour : MonoBehaviour
 
     public void animatePush()
     {
-        anim.SetTrigger("Press");
+        GetComponent<Animator>().SetTrigger("Press");
     }
 }
