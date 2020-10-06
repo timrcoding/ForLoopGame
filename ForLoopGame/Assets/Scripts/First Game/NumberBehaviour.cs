@@ -8,7 +8,6 @@ public class NumberBehaviour : MonoBehaviour
     private int value;
     [SerializeField]
     private TextMeshProUGUI text;
-    public Animator anim;
 
     //SETS PROPERTY OF VALUE
     [SerializeField]
@@ -23,12 +22,14 @@ public class NumberBehaviour : MonoBehaviour
         setText();      
     }
 
-
+    //SET NUMBER TO TEXT
     public void setText()
     {
         text.text = value.ToString();
     }
 
+    //WHEN BUTTON IS PRESSED, INCREMENTS VALUE OF NUMBER, RESETS TO ZERO IF LIMIT IS PASSED
+    //ALL VALUES ARE PASSED TO LOOP, WHICH HOLDS THE VALUES FOR USE IN FUNCTION.
     public void incValue()
     {
         animatePush();
@@ -49,7 +50,7 @@ public class NumberBehaviour : MonoBehaviour
         setText();
         setToLoop();
     }
-
+    //COMMITS VALUES TO LOOP BEHAVIOUR ARRAYS
     public void setToLoop()
     {
         if (initialiser)
@@ -66,6 +67,7 @@ public class NumberBehaviour : MonoBehaviour
         }
     }
 
+    //RESETS VALUE OF NUMBER
     public void resetValue(int i,int j)
     {
         if (value > i)
@@ -74,6 +76,7 @@ public class NumberBehaviour : MonoBehaviour
         }
     }
 
+    //ANIMATES BUTTON
     public void animatePush()
     {
         GetComponent<Animator>().SetTrigger("Press");

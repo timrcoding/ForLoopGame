@@ -7,17 +7,15 @@ using TMPro;
 public class LineBehaviour : MonoBehaviour
 {
     public int uniqueRef;
+    //MUST BE PUBLIC AS ACCESSED IN OTHER SCRIPTS
     public GameObject vehicle;
     [SerializeField]
     private GameObject target;
     [SerializeField]
     private TextMeshProUGUI indexText;
     private bool isTarget;
-    void Start()
-    {
-        
-    }
 
+    //SETS THE COLOR OF THE TARGET COOKIE JAR, BROWN FOR TRUE, RED FOR FALSE.
     public void setTarget()
     {
         isTarget = GameManager.instance.correctAnswers[uniqueRef];
@@ -31,11 +29,13 @@ public class LineBehaviour : MonoBehaviour
         }
     }
 
+    //SETS INDEX OF LINE TO ADJACENT TEXT
     public void setIndex()
     {
         indexText.text = uniqueRef.ToString();
     }
 
+    //MOVES THE VEHICLE IF SELECTED
     public void moveVehicle()
     {
         vehicle.GetComponent<VehicleBehaviour>().resetPosition();

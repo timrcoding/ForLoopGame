@@ -12,13 +12,13 @@ public class OperatorBehaviour : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI text;
-
+    //PUBLIC AS USED IN OTHER SCRIPTS
     public int value;
     void Start()
     {
         setText();
     }
-
+    //INCREMENTS VALUE THAT DEFINES OPERATOR, RESETS WHEN PASSES LIMIT OF 1
     public void incValue()
     {
         GetComponent<Animator>().SetTrigger("Press");
@@ -30,7 +30,7 @@ public class OperatorBehaviour : MonoBehaviour
         setText();
         setToLoop();
     }
-
+    //SETS OPERATOR TO APPROPRIATE SYMBOLS IN TEXT
     public void setText()
     {
         if (limitOperator)
@@ -56,7 +56,7 @@ public class OperatorBehaviour : MonoBehaviour
             }
         }
     }
-
+    //COMMITS VALUES TO LOOP BEHAVIOUR ARRAYS
     public void setToLoop()
     {
         if (limitOperator)

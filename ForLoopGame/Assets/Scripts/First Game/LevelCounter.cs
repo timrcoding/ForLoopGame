@@ -5,15 +5,11 @@ using UnityEngine;
 public class LevelCounter : MonoBehaviour
 {
     public static LevelCounter instance;
+    //MUST BE PUBLIC AS ACCESSED IN OTHER SCRIPTS
     public int count;
     void Start()
     {
         instance = this;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

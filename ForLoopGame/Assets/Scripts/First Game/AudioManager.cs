@@ -14,18 +14,28 @@ public class AudioManager : MonoBehaviour
     private int levelCount;
     void Start()
     {
-        AudioS = GetComponent<AudioSource>();
+        
         instance = this;
-        if (playRobot)
-        {
-            AudioS.PlayOneShot(robotVoice[levelCount]);
-        }
+        //ASSIGNS AUDIO SOURCE
+        AudioS = GetComponent<AudioSource>();
+        //PLAYS ROBOT VOICE AT START OF SCENE IF APPROPRIATE (MAIN GAME)
+        playRobotVoice();
     }
 
     public void playClip(string clip)
     {
+        //LOADS CLIP AS DEFINED BY STRING FROM RESOURCES
         AudioClip clipPlayed = Resources.Load("Sound/" + clip.ToString()) as AudioClip;
+        //PLAYS CLIP
         AudioS.PlayOneShot(clipPlayed);
+    }
+
+    public void playRobotVoice()
+    {
+        if (playRobot)
+        {
+            AudioS.PlayOneShot(robotVoice[levelCount]);
+        }
     }
 
     

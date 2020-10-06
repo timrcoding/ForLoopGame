@@ -14,7 +14,7 @@ public class EndScreen : MonoBehaviour
         
     }
 
-    // Update is called once per frame
+    //CHECKS IF AUDIO HAS PASSED 120 SECONDS AND THEN ACTIVATES END SCREEN.
     void Update()
     {
         audioTime = audioS.time;

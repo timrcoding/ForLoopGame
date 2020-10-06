@@ -9,7 +9,7 @@ public class Clicker : MonoBehaviour
     {
         instance = this;
     }
-
+    //ANIMATES CLICKER WHEN PRESSED
     public void click()
     {
         GetComponent<Animator>().SetTrigger("Press");

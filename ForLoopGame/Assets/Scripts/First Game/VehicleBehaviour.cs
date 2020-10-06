@@ -7,6 +7,7 @@ public class VehicleBehaviour : MonoBehaviour
     private Vector3 startPos;
     [SerializeField]
     private GameObject target;
+    //PUBLIC AS ACCESSED IN OTHER FUNCTIONS
     public bool moveObject;
     [SerializeField]
     private float lerpSpeed;
@@ -18,6 +19,7 @@ public class VehicleBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //LERPS OBJECT TO TARGET POSITION. THIS IS A RARE OCCASION OF A FUNCTION RUNNING IN UPDATE, AS THIS IS NECESSARY FOR LERP.
         if (moveObject)
         {
             moveObject = true;
@@ -29,7 +31,7 @@ public class VehicleBehaviour : MonoBehaviour
         }
         
     }
-
+    //RESETS POSITION OF OBJECT
     public void resetPosition()
     {
         transform.position = startPos;

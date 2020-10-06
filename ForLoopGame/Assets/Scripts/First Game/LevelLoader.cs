@@ -12,6 +12,7 @@ public class LevelLoader : MonoBehaviour
     {
         instance = this;
     }
+    //LOADS AFTER SPECIFIC ALLOCATED WAIT TIME
     public IEnumerator loadNextOnTimer(int i)
     {
         yield return new WaitForSeconds(i);

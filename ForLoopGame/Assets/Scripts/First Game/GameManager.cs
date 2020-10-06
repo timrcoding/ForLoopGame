@@ -8,13 +8,19 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     [SerializeField]
+    //MUST BE PUBLIC AS ACCESSED IN OTHER SCRIPTS
     public List<GameObject> lines;
+    //MUST BE PUBLIC AS ACCESSED IN OTHER SCRIPTS
     public bool[] correctAnswers;
+    //MUST BE PUBLIC AS ACCESSED IN OTHER SCRIPTS
     public bool[] activated;
 
+    //MUST BE PUBLIC AS ACCESSED IN OTHER SCRIPTS
     public Color targetColor;
-    public GameObject transition;
-    public GameObject transitionButton;
+    [SerializeField]
+    private GameObject transition;
+    [SerializeField]
+    private GameObject transitionButton;
 
 
     private void Awake()
@@ -24,22 +30,28 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         instance = this;
+        //SETS ACTIVATED LENGTH
         activated = new bool[correctAnswers.Length];
+        //SETS UP TRANSITION SCREEN
         transition.SetActive(true);
         transitionButton.SetActive(false);
+        //SETS PROPERTIES FOR ALL THE LINES
         setRef();
     }
 
+    //SETS LINE PROPERTIES
     public void setRef()
     {
         for(int i = 0; i < correctAnswers.Length; i++)
         {
-            lines[i].GetComponent<LineBehaviour>().uniqueRef = i;
-            lines[i].GetComponent<LineBehaviour>().setTarget();
-            lines[i].GetComponent<LineBehaviour>().setIndex();
+            LineBehaviour line = lines[i].GetComponent<LineBehaviour>();
+            line.uniqueRef = i;
+            line.setTarget();
+            line.setIndex();
         }
     }
 
+    //CLEARS ACTIVATED OF ANY TRUE BOOLEANS
     public void clearActivatedArray()
     {
         for(int i = 0; i < activated.Length; i++)
@@ -47,6 +59,8 @@ public class GameManager : MonoBehaviour
             activated[i] = false;
         }
     }
+
+    //CHECKS IF ACTIVATED IS THE SAME AS CORRECT
     public void checkForCorrectness()
     {
        
@@ -59,6 +73,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //RUNS GAME WON ANIMATIONS AND SOUNDS, SETS UP TRANSITION SCREEN
     public IEnumerator gameWon()
     {
         
@@ -66,9 +81,10 @@ public class GameManager : MonoBehaviour
         transitionButton.SetActive(true);
         transition.GetComponent<Animator>().SetTrigger("Slide");
         AudioManager.instance.playClip("cheer");
-
     }
 
+    //IF WRONG ANSWER, PLAYS SOUND, THEN MOVES VEHICLE (COOKIE) BACK TO ORIGINAL POSITION
+    //AND SETS ITS 'MOVE OBJECT' PROPERTY TO FALSE. FLASHES BACKGROUND RED THEN RETURNS IT TO WHITE.
     public IEnumerator wrongAnswer()
     {
         yield return new WaitForSeconds(3);

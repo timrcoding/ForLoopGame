@@ -17,6 +17,7 @@ public class ClickerManager : MonoBehaviour
     {
         instance = this;
     }
+    //CHANGES BACKGROUND BY HSV SLOWLY, GOING FROM PINK ALL THE WAY ROUND THE COLOR WHEEL
     private void Update()
     {
         background.color = Color.HSVToRGB(colorCounter, 0.2f, 1);
@@ -26,13 +27,13 @@ public class ClickerManager : MonoBehaviour
             colorCounter = 0;
         }
     }
-
+    //INCREMENTS SCORE
     public void incScore()
     {
         score++;
         setScore(score);
     }
-
+    //SETS SCORE TO TEXT
     public void setScore(int i)
     {
         scoreText.text = i.ToString();

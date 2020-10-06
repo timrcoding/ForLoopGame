@@ -6,9 +6,9 @@ public class Flag : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
+        //CHANGES LEVEL ON CONTACT
         if(other.tag == "Cookie")
         {
-
             AsyncLoad.instance.switchChangeLevel();
         }
     }

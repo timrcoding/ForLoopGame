@@ -5,7 +5,7 @@ using UnityEngine;
 public class Singleton : MonoBehaviour
 {
     public static Singleton instance;
-
+    //PRESERVES ANY INSTANCE OF THIS ACROSS LOADING SCENES
     private void Awake()
     {
         if(instance == null)
