@@ -34,7 +34,7 @@ public class GameManager : MonoBehaviour
         activated = new bool[correctAnswers.Length];
         //SETS UP TRANSITION SCREEN
         transition.SetActive(true);
-        transitionButton.SetActive(false);
+        //transitionButton.SetActive(false);
         //SETS PROPERTIES FOR ALL THE LINES
         setRef();
     }

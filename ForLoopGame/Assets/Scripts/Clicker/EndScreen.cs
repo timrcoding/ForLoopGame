@@ -20,7 +20,7 @@ public class EndScreen : MonoBehaviour
         audioTime = audioS.time;
         if (!canvasOn)
         {
-            if (audioS.time > 120)
+            if (audioS.time > 112)
             {
                 canvasOn = true;
                 canvas.SetActive(true);

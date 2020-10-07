@@ -18,7 +18,7 @@ public class LoopBehaviour : MonoBehaviour
     {
         instance = this;
         warningText.text = "";
-
+        
     }
     //SETS UP FOR LOOP TO RUN, ONLY ALLOWS FOR TWO SETS OF CONDITIONS 
     //1. LOOP LIMIT IS HIGHER THAN INITIALISER, < IS USED AND INCREMENTER != 0

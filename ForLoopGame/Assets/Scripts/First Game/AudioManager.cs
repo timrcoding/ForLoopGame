@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     private AudioClip[] robotVoice;
     [SerializeField]
     private bool playRobot;
+    [SerializeField]
     private int levelCount;
     void Start()
     {

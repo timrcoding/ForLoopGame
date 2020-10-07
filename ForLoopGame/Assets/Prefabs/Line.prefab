@@ -94,7 +94,6 @@ MonoBehaviour:
   vehicle: {fileID: 858277019460872076}
   target: {fileID: 858277018680114577}
   indexText: {fileID: 2820133827862474559}
-  isTarget: 0
 --- !u!95 &6450133403225075227
 Animator:
   serializedVersion: 3

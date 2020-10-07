@@ -5325,6 +5325,11 @@ PrefabInstance:
       propertyPath: yeah
       value: 
       objectReference: {fileID: 8300000, guid: 98c8079bd5fdded42b2ac5ca0ac9d9af, type: 3}
+    - target: {fileID: 2465550580085178877, guid: 988526bf8c9837849ad810a66d19436e,
+        type: 3}
+      propertyPath: levelCount
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2465550580343953877, guid: 988526bf8c9837849ad810a66d19436e,
         type: 3}
       propertyPath: m_Interactable

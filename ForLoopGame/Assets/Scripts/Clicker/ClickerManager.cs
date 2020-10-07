@@ -32,6 +32,10 @@ public class ClickerManager : MonoBehaviour
     {
         score++;
         setScore(score);
+        if(score %10 == 0)
+        {
+            AudioManager.instance.playClip("Cheer");
+        }
     }
     //SETS SCORE TO TEXT
     public void setScore(int i)

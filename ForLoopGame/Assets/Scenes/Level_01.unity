@@ -269,6 +269,16 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 8105484819731220088, guid: 988526bf8c9837849ad810a66d19436e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8105484820740420704, guid: 988526bf8c9837849ad810a66d19436e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 988526bf8c9837849ad810a66d19436e, type: 3}
 --- !u!1001 &7995745236248209685
@@ -343,5 +353,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7995745235569159096, guid: d28521b3aa03c1a4586005c4e3bb56e1,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 77fc0e1070ea8304d82ff3a0e4544c27, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d28521b3aa03c1a4586005c4e3bb56e1, type: 3}

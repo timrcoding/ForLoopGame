@@ -13,6 +13,7 @@ public class Clicker : MonoBehaviour
     public void click()
     {
         GetComponent<Animator>().SetTrigger("Press");
+        AudioManager.instance.playClip("Click");
         ClickerManager.instance.incScore();
     }
 }

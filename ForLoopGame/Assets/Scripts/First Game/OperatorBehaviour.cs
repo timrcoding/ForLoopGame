@@ -12,8 +12,8 @@ public class OperatorBehaviour : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI text;
-    //PUBLIC AS USED IN OTHER SCRIPTS
-    public int value;
+    [SerializeField]
+    private int value;
     void Start()
     {
         setText();
@@ -22,6 +22,7 @@ public class OperatorBehaviour : MonoBehaviour
     public void incValue()
     {
         GetComponent<Animator>().SetTrigger("Press");
+        AudioManager.instance.playClip("Click");
         value++;
         if (value >= 2)
         {

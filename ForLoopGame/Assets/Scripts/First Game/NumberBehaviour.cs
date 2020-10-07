@@ -5,6 +5,7 @@ using TMPro;
 
 public class NumberBehaviour : MonoBehaviour
 {
+    [SerializeField]
     private int value;
     [SerializeField]
     private TextMeshProUGUI text;
@@ -33,6 +34,7 @@ public class NumberBehaviour : MonoBehaviour
     public void incValue()
     {
         animatePush();
+        AudioManager.instance.playClip("Click");
         int num = GameManager.instance.lines.Count;
         value++;
         if (initialiser)

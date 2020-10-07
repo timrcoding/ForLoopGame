@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class HitBall : MonoBehaviour {
 
     private float startClick;
-    private float maximumForce;
+    private float maximumForce = 300;
     
 
     private void Update() {
@@ -21,7 +21,7 @@ public class HitBall : MonoBehaviour {
             //APPLIES LAUNCH FORCE
             Launch(forceOfLaunch(lengthHeldDown));
             //PLAYS SOUNDS
-            AudioManager.instance.playClip("wee");
+            AudioManager.instance.playClip("weee");
             AudioManager.instance.playClip("Club");
         }
     }
@@ -36,6 +36,7 @@ public class HitBall : MonoBehaviour {
 
     public void Launch(float force)
     {
+        Debug.Log("BALL LAUNCHED");
         //WORKS OUT MOUSE POSITION
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         //FINDS ANGLE OF MOUSE POSITION IN RELATION TO OBJECT, THEN REVERSES THIS

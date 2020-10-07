@@ -7,7 +7,7 @@ public class VehicleBehaviour : MonoBehaviour
     private Vector3 startPos;
     [SerializeField]
     private GameObject target;
-    //PUBLIC AS ACCESSED IN OTHER FUNCTIONS
+    //PUBLIC AS SET IN OTHER FUNCTIONS
     public bool moveObject;
     [SerializeField]
     private float lerpSpeed;
