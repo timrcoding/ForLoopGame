@@ -4962,7 +4962,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1452400596
 Transform:
   m_ObjectHideFlags: 0
@@ -5219,6 +5219,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_sharedMaterial
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5517855090141654562, guid: 988526bf8c9837849ad810a66d19436e,
+        type: 3}
+      propertyPath: m_text
+      value: for(i = 1; i < 4; i+=1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5517855090141654562, guid: 988526bf8c9837849ad810a66d19436e,
+        type: 3}
+      propertyPath: m_textInfo.characterCount
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 5517855090141654562, guid: 988526bf8c9837849ad810a66d19436e,
+        type: 3}
+      propertyPath: m_textInfo.wordCount
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 988526bf8c9837849ad810a66d19436e, type: 3}

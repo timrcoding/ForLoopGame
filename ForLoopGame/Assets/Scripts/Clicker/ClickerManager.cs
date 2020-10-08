@@ -16,6 +16,7 @@ public class ClickerManager : MonoBehaviour
     void Start()
     {
         instance = this;
+        destroyPreviousSceneArtifacts();
     }
     //CHANGES BACKGROUND BY HSV SLOWLY, GOING FROM PINK ALL THE WAY ROUND THE COLOR WHEEL
     private void Update()
@@ -41,5 +42,12 @@ public class ClickerManager : MonoBehaviour
     public void setScore(int i)
     {
         scoreText.text = i.ToString();
+    }
+
+    public void destroyPreviousSceneArtifacts()
+    {
+        GameObject singleton = GameObject.FindGameObjectWithTag("Singleton");
+        Destroy(singleton);
+
     }
 }

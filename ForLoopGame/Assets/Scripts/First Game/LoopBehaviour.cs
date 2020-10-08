@@ -12,12 +12,15 @@ public class LoopBehaviour : MonoBehaviour
     public int incrementerValue;
     public int limitOperatorValue;
     public int incOperatorValue;
-
-    public TextMeshProUGUI warningText;
+    [SerializeField]
+    private TextMeshProUGUI warningText;
+    [SerializeField]
+    private GameObject answer;
     void Start()
     {
         instance = this;
         warningText.text = "";
+        answer.SetActive(false);
         
     }
     //SETS UP FOR LOOP TO RUN, ONLY ALLOWS FOR TWO SETS OF CONDITIONS 
@@ -63,6 +66,9 @@ public class LoopBehaviour : MonoBehaviour
         AudioManager.instance.playClip("SlideWhistle");
     }
 
-    
+    public void showAnswer()
+    {
+        answer.SetActive(true);
+    }
 
 }
